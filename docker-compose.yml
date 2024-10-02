@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: uwsgi --wsgi-file app.py --http 5000
+    volumes:
+      - ./services/web/:/usr/src/app/
+    ports:
+      - 5001:5000
+      
+    
